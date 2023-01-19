@@ -11,12 +11,12 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class DateController {
 
-    private final DateService dateService;
+    private final DateService dateService = new DateService();
 
-    @Autowired
+    /*@Autowired
     public DateController(DateService dateService){
         this.dateService = dateService;
-    }
+    }*/
 
     @GetMapping(value = "/date")
     public ResponseEntity<MyDate> read() {
